@@ -6,7 +6,7 @@ pipeline {
         }
     }
     tools {
-        maven 'MavenInstallationName' // Replace 'MavenInstallationName' with the name you provided in Jenkins Global Tool Configuration
+        maven 'mv_install' // Replace 'MavenInstallationName' with the name you provided in Jenkins Global Tool Configuration
     }
     stages {
         stage('Build') {
