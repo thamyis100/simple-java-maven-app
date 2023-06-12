@@ -5,9 +5,6 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    tools {
-        maven 'mv_install' // Replace 'MavenInstallationName' with the name you provided in Jenkins Global Tool Configuration
-    }
     stages {
         stage('Build') {
             steps {
