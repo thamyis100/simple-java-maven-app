@@ -17,6 +17,11 @@ node {
         }
     }
 
+    stage('Manual Approval'){
+        docker.image('maven:3.9.0-eclipse-temurin-11').inside('-v /root/.m2:/root/.m2') {
+            input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" untuk lanjut)'
+        }
+    }
     stage('Deploy') {
         docker.image('maven:3.9.0-eclipse-temurin-11').inside('-v /root/.m2:/root/.m2') {
             sh './jenkins/scripts/deliver.sh'
